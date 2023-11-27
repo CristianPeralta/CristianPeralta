@@ -6,6 +6,8 @@
   - 🌱 I’m currently learning Amazon Web Services
   - 💬 Ask me about [Chess](https://www.chess.com/member/krix0s)
   - 😄 Pronouns: He / Him
+### Top Skills
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)![Javascript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
 
 ### Skills 🛠️
 - **Languages**:&nbsp;      Javascript, Typescript, Python

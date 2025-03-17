@@ -20,9 +20,6 @@
 - **DevOps**:&nbsp;         Linux, Git, Docker
 
 <!-- LAST_UPDATE -->
-📅 *Última actualización:* 2025-03-17 14:52:27 UTC
-📅 *Última actualización:* 2025-03-17 14:51:16 UTC
-📅 *Última actualización:* 2025-03-17 14:48:35 UTC
 <!--
 **CristianPeralta/CristianPeralta** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 -->

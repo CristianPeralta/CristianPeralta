@@ -42,10 +42,9 @@ jobs:
         run: |
           git config --global user.name "CristianPeralta"
           git config --global user.email "cbperaltasegura@gmail.com"
-          git remote set-url origin https://x-access-token:$GH_TOKEN@github.com/CristianPeralta/CristianPeralta.git
 
       - name: Commit and push
         run: |
           git add README.md
           git commit -m "Automatic update: $CURRENT_RATING / $MAX_RATING"
-          git push
+          git push https://x-access-token:$GH_TOKEN@github.com/CristianPeralta/CristianPeralta.git main

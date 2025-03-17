@@ -6,8 +6,8 @@
   - 🌱 I’m currently learning Amazon Web Services
   - 💬 Ask me about [Chess](https://www.chess.com/member/krix0s)
       <!-- CHESS_STATS_START -->
-      - 📈 Rating actual:
-      - 🏆 Rating máximo:
+      - 📈 Rating actual: 1269
+      - 🏆 Rating máximo: 1355
       <!-- CHESS_STATS_END --> 
   - 😄 Pronouns: He / Him
 ### Top Skills
@@ -21,6 +21,7 @@
 
 *Última actualización:*
 <!-- LAST_UPDATE -->
+📅 *Última actualización:* 2025-03-17 14:48:35 UTC
 <!--
 **CristianPeralta/CristianPeralta** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 -->

@@ -41,8 +41,18 @@ jobs:
       - name: Configure Git
         run: |
           git config --local user.name "CristianPeralta"
-          git config --local user.email "cbperaltasegura@gmail.com"
+          git config --local user.email "miegmail@gmail.com"
           git remote set-url origin https://x-access-token:$GH_TOKEN@github.com/CristianPeralta/CristianPeralta.git
+
+      - name: Debug GH_TOKEN
+        run: |
+          echo "Checking authentication..."
+          git ls-remote https://x-access-token:$GH_TOKEN@github.com/CristianPeralta/CristianPeralta.git
+
+      - name: Debug GH_TOKEN literal
+        run: |
+          echo "Checking authentication..."
+          git ls-remote https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/CristianPeralta/CristianPeralta.git
 
       - name: Commit and push
         run: |

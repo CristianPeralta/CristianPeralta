@@ -40,8 +40,8 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config --global user.name "CristianPeralta"
-          git config --global user.email "cbperaltasegura@gmail.com"
+          git config --local user.name "CristianPeralta"
+          git config --local user.email "cbperaltasegura@gmail.com"
           git remote set-url origin https://x-access-token:$GH_TOKEN@github.com/CristianPeralta/CristianPeralta.git
 
       - name: Commit and push

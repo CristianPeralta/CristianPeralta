@@ -32,11 +32,10 @@ jobs:
           ' README.md > temp.md && mv temp.md README.md
 
           # Update last updated timestamp at the end of the README.
-          if grep -q "<!-- LAST_UPDATE -->" README.md; then
-            sed -i "/<!-- LAST_UPDATE -->/c\*Última actualización:* $DATE" README.md
-          else
-            echo -e "\n*Última actualización:* $DATE <!-- LAST_UPDATE -->" >> README.md
-          fi
+          awk -v date="$DATE" '
+            {if (!found && /<!-- LAST_UPDATE -->/) {print "📅 *Última actualización:* " date " <!-- LAST_UPDATE -->"; found=1; next} }
+            !/<!-- LAST_UPDATE -->/ {print}
+          ' README.md > temp.md && mv temp.md README.md
 
       - name: Configure Git
         run: |

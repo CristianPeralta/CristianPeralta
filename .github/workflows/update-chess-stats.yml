@@ -54,8 +54,11 @@ jobs:
           echo "Checking authentication..."
           git ls-remote https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/CristianPeralta/CristianPeralta.git
 
+      - name: Debug Git Remote
+        run: git remote -v
+
       - name: Commit and push
         run: |
           git add README.md
           git commit -m "Automatic update: $CURRENT_RATING / $MAX_RATING"
-          git push origin main
+          git push https://x-access-token:$GH_TOKEN@github.com/CristianPeralta/CristianPeralta.git

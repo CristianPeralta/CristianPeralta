@@ -45,5 +45,5 @@ jobs:
       - name: Commit and push
         run: |
           git add README.md
-          git commit -m "♟️ Actualización automática: $CURRENT_RATING / $MAX_RATING"
+          git commit -m "Automatic update: $CURRENT_RATING / $MAX_RATING"
           git push

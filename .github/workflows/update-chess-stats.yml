@@ -44,27 +44,8 @@ jobs:
           git config --local user.email "miegmail@gmail.com"
           git remote set-url origin https://x-access-token:$GH_TOKEN@github.com/CristianPeralta/CristianPeralta.git
 
-      - name: Debug GH_TOKEN
-        run: |
-          echo "Checking authentication..."
-          git ls-remote https://x-access-token:$GH_TOKEN@github.com/CristianPeralta/CristianPeralta.git
-
-      - name: Debug GH_TOKEN literal
-        run: |
-          echo "Checking authentication..."
-          git ls-remote https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/CristianPeralta/CristianPeralta.git
-
-      - name: Debug Git Remote
-        run: git remote -v
-      
-      - name: Check  authentication
-        run: |
-          curl -H "Authorization: token ${{ secrets.GH_TOKEN }}" \
-              -H "Accept: application/vnd.github.v3+json" \
-              https://api.github.com/user
-
       - name: Commit and push
         run: |
           git add README.md
           git commit -m "Automatic update: $CURRENT_RATING / $MAX_RATING"
-          git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/CristianPeralta/CristianPeralta.git main
+          git push

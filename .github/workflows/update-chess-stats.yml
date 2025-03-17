@@ -33,9 +33,9 @@ jobs:
 
           # Update last updated timestamp at the end of the README.
           if grep -q "<!-- LAST_UPDATE -->" README.md; then
-            sed -i "/<!-- LAST_UPDATE -->/c\📅 *Última actualización:* $DATE" README.md
+            sed -i "/<!-- LAST_UPDATE -->/c\*Última actualización:* $DATE" README.md
           else
-            echo -e "\n📅 *Última actualización:* $DATE <!-- LAST_UPDATE -->" >> README.md
+            echo -e "\n*Última actualización:* $DATE <!-- LAST_UPDATE -->" >> README.md
           fi
 
       - name: Configure Git

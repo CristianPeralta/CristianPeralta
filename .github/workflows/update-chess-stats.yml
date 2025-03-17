@@ -56,6 +56,12 @@ jobs:
 
       - name: Debug Git Remote
         run: git remote -v
+      
+      - name: Check  authentication
+        run: |
+          curl -H "Authorization: token ${{ secrets.GH_TOKEN }}" \
+              -H "Accept: application/vnd.github.v3+json" \
+              https://api.github.com/user
 
       - name: Commit and push
         run: |

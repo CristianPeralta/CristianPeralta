@@ -1,0 +1,49 @@
+name: Update Chess Rating in README
+
+on:
+  #schedule:
+  #  - cron: "0 0 * * *" # Runs every day at midnight UTC
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v3
+
+      - name: Update README with Chess Stats
+        run: |
+          USERNAME="krix0s"
+          URL="https://www.chess.com/callback/member/stats/$USERNAME"
+          DATA=$(curl -s $URL)
+
+          CURRENT_RATING=$(echo $DATA | jq '[.stats[].stats.rating] | max')
+          MAX_RATING=$(echo $DATA | jq '[.stats[].stats.highest_rating] | max')
+          DATE=$(date +"%Y-%m-%d %H:%M:%S UTC")
+
+          # Update Chess Stats section.
+          awk -v current="$CURRENT_RATING" -v max="$MAX_RATING" '
+            BEGIN {inside=0}
+            /<!-- CHESS_STATS_START -->/ {inside=1; print; print "      - 📈 Rating actual: " current; print "      - 🏆 Rating máximo: " max; next}
+            /<!-- CHESS_STATS_END -->/ {inside=0}
+            !inside {print}
+          ' README.md > temp.md && mv temp.md README.md
+
+          # Update last updated timestamp at the end of the README.
+          awk -v date="$DATE" '
+            /<!-- LAST_UPDATE -->/ {print; print "📅 *Última actualización:* " date; next}
+            {print}
+          ' README.md > temp.md && mv temp.md README.md
+
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+
+      - name: Commit and push
+        run: |
+          git add README.md
+          git commit -m "♟️ Actualización automática: $CURRENT_RATING / $MAX_RATING"
+          git push

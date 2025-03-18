@@ -15,7 +15,7 @@
 
 ### Skills 🛠️
 - **Languages**:&nbsp;      Javascript, Typescript, Python
-- **Frameworks**:&nbsp;       Node.js, Nest.js, Vue.js, React.js
+- **Frameworks**:&nbsp;       Node.js, Nest.js, FastAPI, Vue.js, React.js
 - **Databases**:&nbsp;      Mongodb, Postgres, Mysql, Redis
 - **DevOps**:&nbsp;         Linux, Git, Docker
 

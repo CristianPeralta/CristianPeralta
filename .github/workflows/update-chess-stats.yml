@@ -2,8 +2,8 @@ name: Update Chess Rating in README
 env:
   GH_TOKEN: ${{ secrets.GH_TOKEN }}
 on:
-  # schedule:
-  #  - cron: "0 0 * * *" # Runs every day at midnight UTC
+  schedule:
+   - cron: "0 0 * * *" # Runs every day at midnight UTC
   workflow_dispatch:
 
 jobs:

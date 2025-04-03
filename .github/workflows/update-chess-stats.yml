@@ -2,8 +2,8 @@ name: Update Chess Rating in README
 env:
   GH_TOKEN: ${{ secrets.GH_TOKEN }}
 on:
-  schedule:
-    - cron: "0 0 * * *" # Runs every day at midnight UTC
+  # schedule:
+  #  - cron: "0 0 * * *" # Runs every day at midnight UTC
   workflow_dispatch:
 
 jobs:
@@ -20,7 +20,19 @@ jobs:
           DATA=$(curl -s $URL)
 
           CURRENT_RATING=$(echo $DATA | jq '[.stats[].stats.rating] | max')
-          MAX_RATING=$(echo $DATA | jq '[.stats[].stats.highest_rating] | max')
+
+          OLD_CURRENT_RATING=$(grep -oP '(?<=📈 Rating actual: )\d+' README.md)
+          OLD_MAX_RATING=$(grep -oP '(?<=🏆 Rating máximo: )\d+' README.md)
+
+          OLD_CURRENT_RATING=${OLD_CURRENT_RATING:-0}
+          OLD_MAX_RATING=${OLD_MAX_RATING:-0}
+
+          if [ "$CURRENT_RATING" -gt "$OLD_MAX_RATING" ]; then
+            MAX_RATING=$CURRENT_RATING
+          else
+            MAX_RATING=$OLD_MAX_RATING
+          fi
+
           DATE=$(date +"%Y-%m-%d %H:%M:%S UTC")
 
           # Update Chess Stats section.

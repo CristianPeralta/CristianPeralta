@@ -6,7 +6,7 @@
   - 🌱 I’m currently learning Amazon Web Services
   - 💬 Ask me about [Chess](https://www.chess.com/member/krix0s)
       <!-- CHESS_STATS_START -->
-      - 📈 Rating actual: 1200
+      - 📈 Rating actual: 1204
       - 🏆 Rating máximo: 1431
       <!-- CHESS_STATS_END --> 
   - 😄 Pronouns: He / Him
@@ -19,7 +19,7 @@
 - **Databases**:&nbsp;      Mongodb, Postgres, Mysql, Redis
 - **DevOps**:&nbsp;         Linux, Git, Docker
 
-📅 *Última actualización:* 2025-06-02 02:08:05 UTC <!-- LAST_UPDATE -->
+📅 *Última actualización:* 2025-06-03 02:04:35 UTC <!-- LAST_UPDATE -->
 <!--
 **CristianPeralta/CristianPeralta** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 -->

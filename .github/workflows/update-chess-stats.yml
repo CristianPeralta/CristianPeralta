@@ -21,9 +21,9 @@ jobs:
 
           CURRENT_RATING=$(echo $DATA | jq '[.stats[].stats.rating] | max')
 
-          OLD_CURRENT_RATING=$(grep -oP '(?<=📈 Rating actual: )\d+' README.md)
-          OLD_MAX_RATING=$(grep -oP '(?<=🏆 Rating máximo: )\d+' README.md)
-
+          OLD_CURRENT_RATING=$(grep -oP '(?<=📈 Current rating: )\d+' README.md)
+          OLD_MAX_RATING=$(grep -oP '(?<=🏆 Max rating: )\d+' README.md)
+  
           OLD_CURRENT_RATING=${OLD_CURRENT_RATING:-0}
           OLD_MAX_RATING=${OLD_MAX_RATING:-0}
 
@@ -38,14 +38,14 @@ jobs:
           # Update Chess Stats section.
           awk -v current="$CURRENT_RATING" -v max="$MAX_RATING" '
             BEGIN {inside=0}
-            /<!-- CHESS_STATS_START -->/ {inside=1; print; print "      - 📈 Rating actual: " current; print "      - 🏆 Rating máximo: " max; next}
+            /<!-- CHESS_STATS_START -->/ {inside=1; print; print "      - 📈 Current rating: " current; print "      - 🏆 Max rating: " max; next}
             /<!-- CHESS_STATS_END -->/ {inside=0}
             !inside {print}
           ' README.md > temp.md && mv temp.md README.md
 
           # Update last updated timestamp at the end of the README.
           awk -v date="$DATE" '
-            {if (!found && /<!-- LAST_UPDATE -->/) {print "📅 *Última actualización:* " date " <!-- LAST_UPDATE -->"; found=1; next} }
+            {if (!found && /<!-- LAST_UPDATE -->/) {print "📅 *Last update:* " date " <!-- LAST_UPDATE -->"; found=1; next} }
             !/<!-- LAST_UPDATE -->/ {print}
           ' README.md > temp.md && mv temp.md README.md
 

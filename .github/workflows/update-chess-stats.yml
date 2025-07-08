@@ -19,14 +19,12 @@ jobs:
           URL="https://www.chess.com/callback/member/stats/$USERNAME"
           DATA=$(curl -s $URL)
 
-          CURRENT_RATING=$(echo $DATA | jq '[.stats[].stats.rating] | max')
-
-          OLD_CURRENT_RATING=$(grep -oP '(?<=📈 Current rating: )\d+' README.md)
-          OLD_MAX_RATING=$(grep -oP '(?<=🏆 Max rating: )\d+' README.md)
-  
-          OLD_CURRENT_RATING=${OLD_CURRENT_RATING:-0}
-          OLD_MAX_RATING=${OLD_MAX_RATING:-0}
-
+          CURRENT_RATING=$(echo $DATA | jq '[.stats[].stats.rating] | max' | tr -d '\n')
+          
+          # Get current max rating from the badge
+          OLD_MAX_RATING=$(grep -oP '(?<=Peak-)\d+(?=-5d9948)' README.md || echo "0")
+          
+          # If current rating is higher than the recorded max, update max rating
           if [ "$CURRENT_RATING" -gt "$OLD_MAX_RATING" ]; then
             MAX_RATING=$CURRENT_RATING
           else
@@ -35,12 +33,15 @@ jobs:
 
           DATE=$(date +"%Y-%m-%d %H:%M:%S UTC")
 
-          # Update Chess Stats section.
+          # Update Chess Stats section with badges
           awk -v current="$CURRENT_RATING" -v max="$MAX_RATING" '
-            BEGIN {inside=0}
-            /<!-- CHESS_STATS_START -->/ {inside=1; print; print "      - 📈 Current rating: " current; print "      - 🏆 Max rating: " max; next}
-            /<!-- CHESS_STATS_END -->/ {inside=0}
-            !inside {print}
+            /<img src=".*?Rating-[0-9]+-5d9948/ {
+              sub(/Rating-[0-9]+-5d9948/, "Rating-" current "-5d9948");
+            }
+            /<img src=".*?Peak-[0-9]+-5d9948/ {
+              sub(/Peak-[0-9]+-5d9948/, "Peak-" max "-5d9948");
+            }
+            { print }
           ' README.md > temp.md && mv temp.md README.md
 
           # Update last updated timestamp at the end of the README.

@@ -20,15 +20,15 @@
   <li>
     <div style="display: flex; align-items: center;">
       <a href="https://www.chess.com/member/krix0s" target="_blank" rel="noopener noreferrer">Chess player</a>&nbsp;&nbsp;&nbsp;&nbsp;
-      <img src="https://img.shields.io/badge/Rating-1262-5d9948?style=flat-square&logo=chess.com&logoColor=white" alt="Chess rating" />&nbsp;
-      <img src="https://img.shields.io/badge/Peak-1437-5d9948?style=flat-square&logo=chess.com&logoColor=white" alt="Chess peak" />
+      <img src="https://img.shields.io/badge/Rating-1461-5d9948?style=flat-square&logo=chess.com&logoColor=white" alt="Chess rating" />&nbsp;
+      <img src="https://img.shields.io/badge/Peak-1461-5d9948?style=flat-square&logo=chess.com&logoColor=white" alt="Chess peak" />
     </div>
   </li>
 </ul>
 </div>
 
 
-📅 *Last update:* 2025-10-09 01:52:28 UTC <!-- LAST_UPDATE -->
+📅 *Last update:* 2025-10-10 01:52:52 UTC <!-- LAST_UPDATE -->
 <!--
 **CristianPeralta/CristianPeralta** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 -->

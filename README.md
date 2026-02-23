@@ -1,34 +1,34 @@
-<h2> Hi 𝐭𝐡𝐞𝐫𝐞! <img src="https://github.com/ABSphreak/ABSphreak/blob/master/gifs/Hi.gif" width="30"></h2>
+## Hey, I'm Cristian
 
 ![](https://komarev.com/ghpvc/?username=CristianPeralta&label=Profile%20Visits&color=blue&style=for-the-badge)
 
-  - 🔭 I’m currently working as a Software Developer
-  - 🌱 I’m currently learning Amazon Web Services
+Senior Backend Engineer with 8+ years building scalable systems in Node.js and TypeScript.
 
-### Top Skills
-![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)![Javascript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+Currently building [Legimus AI](https://legimus.ai) — a multi-channel conversational commerce platform.
 
-### Skills 🛠️
-- **Languages**:&nbsp;      Javascript, Typescript, Python
-- **Frameworks**:&nbsp;       Node.js, Nest.js, FastAPI, Vue.js, React.js
-- **Databases**:&nbsp;      Mongodb, Postgres, Mysql, Redis
-- **DevOps**:&nbsp;         Linux, Git, Docker
+### What I work with
+
+**Backend:** Node.js, TypeScript, Express, REST APIs, WebSockets, Microservices
+**Databases:** PostgreSQL, MongoDB, Redis, ElasticSearch
+**DevOps:** Docker, CI/CD, Nginx, AWS, Linux
+**AI:** OpenAI API, AI Agent Orchestration
+**Explored:** NestJS, Prisma, GraphQL, FastAPI, Python
+
+### Featured projects
+
+- **[nestjs-rest-api](https://github.com/CristianPeralta/nestjs-rest-api)** — Backend API with NestJS, TypeScript, Swagger, Docker, and CI/CD
+- **[realtime-chat-app](https://github.com/CristianPeralta/realtime-chat-app)** — Real-time chat with private messaging, chat rooms, and photo sharing (Node.js, WebSockets)
+- **[server-performance-comparison](https://github.com/CristianPeralta/server-performance-comparison)** — Apache vs Node.js benchmark under concurrent load with Docker
+- **[store-helper-bot](https://github.com/CristianPeralta/store-helper-bot)** — AI-powered store assistant bot with OpenAI
+- **[mongo-cascade-migrator](https://github.com/CristianPeralta/mongo-cascade-migrator)** — npm package to clone MongoDB documents and references recursively
+- **[Helpet](https://github.com/CodenityOrg/Helpet)** — Node.js app to report lost pets with real-time updates and interactive maps (open source, Codenity)
+
+### Find me
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/cristian-peralta-segura)
 
 ### Hobbies
-<div style="display: flex; align-items: center;">
-<ul>
-  <li>
-    <div style="display: flex; align-items: center;">
-      <a href="https://www.chess.com/member/krix0s" target="_blank" rel="noopener noreferrer">Chess player</a>&nbsp;&nbsp;&nbsp;&nbsp;
-      <img src="https://img.shields.io/badge/Rating-1326-5d9948?style=flat-square&logo=chess.com&logoColor=white" alt="Chess rating" />&nbsp;
-      <img src="https://img.shields.io/badge/Peak-1461-5d9948?style=flat-square&logo=chess.com&logoColor=white" alt="Chess peak" />
-    </div>
-  </li>
-</ul>
-</div>
 
-
-📅 *Last update:* 2026-02-23 02:49:35 UTC <!-- LAST_UPDATE -->
-<!--
-**CristianPeralta/CristianPeralta** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
--->
+<a href="https://www.chess.com/member/krix0s" target="_blank" rel="noopener noreferrer">Chess player</a>&nbsp;&nbsp;
+<img src="https://img.shields.io/badge/Rating-1326-5d9948?style=flat-square&logo=chess.com&logoColor=white" alt="Chess rating" />&nbsp;
+<img src="https://img.shields.io/badge/Peak-1461-5d9948?style=flat-square&logo=chess.com&logoColor=white" alt="Chess peak" />

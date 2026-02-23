@@ -21,7 +21,7 @@ Currently building [Legimus AI](https://legimus.ai) — a multi-channel conversa
 - **[server-performance-comparison](https://github.com/CristianPeralta/server-performance-comparison)** — Apache vs Node.js benchmark under concurrent load with Docker
 - **[store-helper-bot](https://github.com/CristianPeralta/store-helper-bot)** — AI-powered store assistant bot with OpenAI
 - **[mongo-cascade-migrator](https://github.com/CristianPeralta/mongo-cascade-migrator)** — npm package to clone MongoDB documents and references recursively
-- **[Helpet](https://github.com/CodenityOrg/Helpet)** — Node.js app to report lost pets with real-time updates and interactive maps (open source, Codenity)
+- **[helpet-API](https://github.com/CodenityOrg/helpet-API)** — REST API for a lost pets platform with Node.js, Express, WebSockets, Swagger, and Firebase (open source, Codenity)
 
 ### Find me
 

@@ -8,10 +8,10 @@ Currently building [Legimus AI](https://legimus.ai) — a multi-channel conversa
 
 ### What I work with
 
-**Backend:** Node.js, TypeScript, Express, REST APIs, WebSockets, Microservices
-**Databases:** PostgreSQL, MongoDB, Redis, ElasticSearch
-**DevOps:** Docker, CI/CD, Nginx, AWS, Linux
-**AI:** OpenAI API, AI Agent Orchestration
+**Backend:** Node.js, TypeScript, Express, REST APIs, WebSockets, Microservices<br>
+**Databases:** PostgreSQL, MongoDB, Redis, ElasticSearch<br>
+**DevOps:** Docker, CI/CD, Nginx, AWS, Linux<br>
+**AI:** OpenAI API, AI Agent Orchestration<br>
 **Explored:** NestJS, Prisma, GraphQL, FastAPI, Python
 
 ### Featured projects

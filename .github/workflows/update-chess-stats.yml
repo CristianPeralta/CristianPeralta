@@ -16,10 +16,10 @@ jobs:
       - name: Update README with Chess Stats
         run: |
           USERNAME="krix0s"
-          URL="https://www.chess.com/callback/member/stats/$USERNAME"
+          URL="https://api.chess.com/pub/player/$USERNAME/stats"
           DATA=$(curl -s $URL)
 
-          CURRENT_RATING=$(echo $DATA | jq '[.stats[].stats.rating] | max' | tr -d '\n')
+          CURRENT_RATING=$(echo $DATA | jq '[.chess_rapid.last.rating // 0, .chess_blitz.last.rating // 0, .chess_bullet.last.rating // 0, .chess_daily.last.rating // 0] | map(select(. > 0)) | if length > 0 then max else 0 end' | tr -d '\n')
           
           # Get current max rating from the badge
           OLD_MAX_RATING=$(grep -oP '(?<=Peak-)\d+(?=-5d9948)' README.md || echo "0")
@@ -49,6 +49,9 @@ jobs:
             {if (!found && /<!-- LAST_UPDATE -->/) {print "📅 *Last update:* " date " <!-- LAST_UPDATE -->"; found=1; next} }
             !/<!-- LAST_UPDATE -->/ {print}
           ' README.md > temp.md && mv temp.md README.md
+
+          echo "CURRENT_RATING=$CURRENT_RATING" >> $GITHUB_ENV
+          echo "MAX_RATING=$MAX_RATING" >> $GITHUB_ENV
 
       - name: Configure Git
         run: |

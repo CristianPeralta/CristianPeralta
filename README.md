@@ -30,5 +30,5 @@ Currently building [Legimus AI](https://legimus.ai) — a multi-channel conversa
 ### Hobbies
 
 <a href="https://www.chess.com/member/krix0s" target="_blank" rel="noopener noreferrer">Chess player</a>&nbsp;&nbsp;
-<img src="https://img.shields.io/badge/Rating-1360-5d9948?style=flat-square&logo=chess.com&logoColor=white" alt="Chess rating" />&nbsp;
+<img src="https://img.shields.io/badge/Rating-1337-5d9948?style=flat-square&logo=chess.com&logoColor=white" alt="Chess rating" />&nbsp;
 <img src="https://img.shields.io/badge/Peak-1461-5d9948?style=flat-square&logo=chess.com&logoColor=white" alt="Chess peak" />

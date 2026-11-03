@@ -15,12 +15,18 @@ jobs:
 
       - name: Update README with Chess Stats
         run: |
+          set -euo pipefail
           USERNAME="krix0s"
           URL="https://api.chess.com/pub/player/$USERNAME/stats"
-          DATA=$(curl -s $URL)
+          # Chess.com 403s without a contact User-Agent (required since 2023).
+          DATA=$(curl -fsS -A "CristianPeralta-readme (krix0s; cbperaltasegura@gmail.com)" "$URL")
 
-          CURRENT_RATING=$(echo $DATA | jq '[.chess_rapid.last.rating // 0, .chess_blitz.last.rating // 0, .chess_bullet.last.rating // 0, .chess_daily.last.rating // 0] | map(select(. > 0)) | if length > 0 then max else 0 end' | tr -d '\n')
-          
+          CURRENT_RATING=$(printf '%s' "$DATA" | jq -er '[.chess_rapid.last.rating // 0, .chess_blitz.last.rating // 0, .chess_bullet.last.rating // 0, .chess_daily.last.rating // 0] | map(select(. > 0)) | if length > 0 then max else 0 end')
+          if ! [[ "$CURRENT_RATING" =~ ^[0-9]+$ ]] || [ "$CURRENT_RATING" -eq 0 ]; then
+            echo "chess.com returned no rating" >&2
+            exit 1
+          fi
+
           # Get current max rating from the badge
           OLD_MAX_RATING=$(grep -oP '(?<=Peak-)\d+(?=-5d9948)' README.md || echo "0")
           
@@ -35,8 +41,8 @@ jobs:
 
           # Update Chess Stats section with badges
           awk -v current="$CURRENT_RATING" -v max="$MAX_RATING" '
-            /<img src=".*?Rating-[0-9]+-5d9948/ {
-              sub(/Rating-[0-9]+-5d9948/, "Rating-" current "-5d9948");
+            /<img src=".*?Rating-[0-9]*-5d9948/ {
+              sub(/Rating-[0-9]*-5d9948/, "Rating-" current "-5d9948");
             }
             /<img src=".*?Peak-[0-9]+-5d9948/ {
               sub(/Peak-[0-9]+-5d9948/, "Peak-" max "-5d9948");
@@ -45,6 +51,7 @@ jobs:
           ' README.md > temp.md && mv temp.md README.md
 
           # Update last updated timestamp at the end of the README.
+          grep -q '<!-- LAST_UPDATE -->' README.md
           awk -v date="$DATE" '
             {if (!found && /<!-- LAST_UPDATE -->/) {print "📅 *Last update:* " date " <!-- LAST_UPDATE -->"; found=1; next} }
             !/<!-- LAST_UPDATE -->/ {print}
